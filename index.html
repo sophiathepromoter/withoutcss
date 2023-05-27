@@ -674,15 +674,15 @@ I would recommend her anyday ...she is the best in her industry</p>
 <script>
   document.getElementById("telegramForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    var name = document.getElementsByName("name")[0].value;
-    var mobile = document.getElementsByName("mobile")[0].value;
-    var email = document.getElementsByName("email")[0].value;
-    var message = document.getElementsByName("message")[0].value;
+    var name = document.getElementById("contact-name").value;
+    var mobile = document.getElementById("contact-mobile").value;
+    var email = document.getElementById("contact-email").value;
+    var message = document.getElementById("contact-message").value;
     sendMessage(name, mobile, email, message);
   });
 
   function sendMessage(name, mobile, email, message) {
-    var botToken = '6031687053:AAEzZ1dy3Z0Lxg4tl0VXm0a9NT2HJ_vpGog';
+    var botToken = process.env.TELEGRAM_BOT_TOKEN;   
     var chatId = '@sophiathepromoter';
     var text = `Name: ${name.replace(/\n/g, '%0A')}
                 Mobile: ${mobile.replace(/\n/g, '%0A')}
@@ -726,7 +726,6 @@ I would recommend her anyday ...she is the best in her industry</p>
     xhr.send();
   }
 </script>
-
 <style>
   .submitting-message {
     color: #FF0000; /* Replace with your desired color */
