@@ -665,7 +665,7 @@ I would recommend her anyday ...she is the best in her industry</p>
                   <p id="successMessage" class="submitting-message"></p>
                   </form>
                 
-
+     <script>           
 document.getElementById("telegramForm").addEventListener("submit", function(event) {
   event.preventDefault();
   var name = document.getElementsByName("name")[0].value;
@@ -719,7 +719,7 @@ function sendMessage(name, mobile, email, message) {
   };
   xhr.send();
 }
-
+ </script>
 
 <style>
   .submitting-message {
