@@ -678,10 +678,10 @@ document.getElementById("telegramForm").addEventListener("submit", function(even
 function sendMessage(name, mobile, email, message) {
   var botToken = '6031687053:AAEzZ1dy3Z0Lxg4tl0VXm0a9NT2HJ_vpGog';
   var chatId = '@sophiathepromoter';
-  var text = `Name: ${name.replace(/\n/g, '%0A')}
-              Mobile: ${mobile.replace(/\n/g, '%0A')}
-              Email: ${email.replace(/\n/g, '%0A')}
-              Message: ${message.replace(/\n/g, '%0A')}`;
+  var text = `Name: ${name}
+              Mobile: ${mobile}
+              Email: ${email}
+              Message: ${message}`;
   var url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
 
   // Display "Please wait" message
@@ -719,6 +719,7 @@ function sendMessage(name, mobile, email, message) {
   };
   xhr.send();
 }
+
  </script>
 
 <style>
